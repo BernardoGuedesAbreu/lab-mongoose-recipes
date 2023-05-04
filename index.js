@@ -37,7 +37,11 @@ const manageRecipes = async () => {
      //Number2
      const allRecipes = await Recipe.insertMany(data);
   
-     console.log(`Inserted ${allRecipes.length} recipes into the database`);
+     allRecipes.forEach(recipe => {
+      console.log(`Inserted recipe with title "${recipe.title}" into the database`);
+    });
+    
+    console.log(`Inserted ${allRecipes.length} recipes into the database`);
      
      //number3
 
